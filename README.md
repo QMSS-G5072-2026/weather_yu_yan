@@ -34,3 +34,5 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 ## Credits
 
 `weather_yy3648` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `qmss-pkgs-cookiecutter` [template](https://github.com/QMSS-G5072-2026/qmss-pkgs-cookiecutter), a uv-based fork of [`py-pkgs-cookiecutter`](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+
+[![CI](https://github.com/QMSS-G5072-2026/weather_yu_yan/actions/workflows/ci.yml/badge.svg)](https://github.com/QMSS-G5072-2026/weather_yu_yan/actions/workflows/ci.yml)
