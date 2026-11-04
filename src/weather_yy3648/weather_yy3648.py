@@ -1,4 +1,4 @@
-"""Weather station utilities for QMSS G5072 Homework 6."""
+"""Weather station utilities for the weather_yy3648 package."""
 
 import math
 
@@ -22,6 +22,12 @@ def celsius_to_fahrenheit(celsius: float) -> float:
     Raises:
         TypeError: If `celsius` is not an int or a float.
         ValueError: If `celsius` is below absolute zero (-273.15 C).
+
+    Examples
+    --------
+    >>> from weather_yy3648 import celsius_to_fahrenheit
+    >>> celsius_to_fahrenheit(25.0)
+    77.0
     """
     if isinstance(celsius, bool) or not isinstance(celsius, (int, float)):
         raise TypeError("celsius must be a number")
@@ -42,6 +48,12 @@ def summarize_temperatures(temps: list[float]) -> dict[str, float]:
 
     Raises:
         ValueError: If there are no valid (non-missing) readings.
+
+    Examples
+    --------
+    >>> from weather_yy3648 import summarize_temperatures
+    >>> summarize_temperatures([10.0, float("nan"), 20.0])
+    {'mean': 15.0, 'min': 10.0, 'max': 20.0, 'n_missing': 1}
     """
     valid = [t for t in temps if not math.isnan(t)]
     if not valid:
@@ -75,5 +87,4 @@ def clean_readings(df: pd.DataFrame) -> pd.DataFrame:
     cleaned = cleaned[in_range].copy()
     cleaned["temp_f"] = cleaned["temp_c"] * 9 / 5 + 32
     return cleaned.sort_values(["station", "date"]).reset_index(drop=True)
-
 
